@@ -1,0 +1,59 @@
+<a [routerLink]="['']"> Home |</a>
+
+
+<h1> New Question </h1>
+
+
+
+<form (submit)="create(newQ)" #QForm="ngForm">
+
+<table>
+	<tr>
+		<td> Question: </td>
+		<td> <input type="text" name="question"    
+            required
+            minlength="15" 
+            [(ngModel)]="newQ.question" 
+            #question="ngModel" > </td>
+        <td *ngIf="question.invalid"> Enter the question with at least 15 characters</td>
+    </tr>
+
+    <tr>
+		<td> Correct Answer: </td>
+		<td> <input type="text" name="option1"    
+            required
+            [(ngModel)]="newQ.options[0].ans" 
+            #option1="ngModel" >  </td>
+        <td *ngIf="option1.invalid"> Must be filled in</td>
+    </tr>
+
+    <tr>
+		<td> Fake Answer 1: </td>
+		<td> <input type="text" name="option2"    
+            required
+            minlength="3" 
+            [(ngModel)]="newQ.options[1].ans" 
+            #option2="ngModel" > </td>
+        <td *ngIf="option2.invalid"> Must be filled in</td>
+
+    </tr>
+
+    <tr>
+		<td> Fake Answer 2: </td>
+		<td> <input type="text" name="option3"    
+            required
+            minlength="3" 
+            [(ngModel)]="newQ.options[2].ans" 
+            #option3="ngModel" >  </td>
+        <td *ngIf="option3.invalid"> Must be filled in</td>
+
+    </tr>
+
+</table>
+   <button type="reset"> <a [routerLink]="['']"> Cancel </a>
+ </button>
+	<button type="submit" [disabled]="!(QForm.valid)"> Add Question </button>
+
+</form>
+
+

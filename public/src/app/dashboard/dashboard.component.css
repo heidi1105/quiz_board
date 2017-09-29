@@ -1,0 +1,37 @@
+div{
+	width:400px;
+	height:100px;
+	border: 2px solid grey;
+	background-color: skyblue;
+	margin:auto;
+	padding:10px;
+	text-align: center
+}
+
+button{
+	height:40px;
+	width: 100px;
+}
+
+table{
+	margin:auto 5px;
+	display: block;
+	width: 70%;
+	text-align: center;
+}
+
+td, th{
+	width:30%;
+	text-align: left
+}
+
+#msg{
+	width: 500px;
+	height:60px;
+	background-color: #40961b;
+	color: white;
+	margin: 10px;
+	margin:auto;
+
+
+}

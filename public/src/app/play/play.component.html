@@ -1,0 +1,50 @@
+<h2> Hi {{ user }} ! </h2>
+
+<p> Choose an answer for each of the questions and submit the test once done. Good Luck! </p>
+
+<form (submit)="marking(myAns)" #playForm="ngForm">
+
+<div>
+	<p>  1. {{ questions[0].question }} </p>
+
+  <input type="radio" name="q1" [(ngModel)]="myAns[0]" value=0> 
+  {{questions[0].options[0].ans}}<br>
+  <input type="radio" name="q1" [(ngModel)]="myAns[0]" value=1> 
+  {{questions[0].options[1].ans}}<br>
+  <input type="radio" name="q1" [(ngModel)]="myAns[0]" value=2> 
+  {{questions[0].options[2].ans}}<br>
+</div>
+
+<div>
+	<p>  2. {{ questions[1].question }} </p>
+
+  <input type="radio" name="q2" [(ngModel)]="myAns[1]" value=0> 
+  {{questions[1].options[0].ans}}<br>
+  <input type="radio" name="q2" [(ngModel)]="myAns[1]" value=1> 
+  {{questions[1].options[1].ans}}<br>
+  <input type="radio" name="q2" [(ngModel)]="myAns[1]" value=2> 
+  {{questions[1].options[2].ans}}<br>
+</div>
+
+<div>
+	<p>  3. {{ questions[2].question }} </p>
+
+  <input type="radio" name="q3" [(ngModel)]="myAns[2]" value=0> 
+  {{questions[2].options[0].ans}}<br>
+  <input type="radio" name="q3" [(ngModel)]="myAns[2]" value=1> 
+  {{questions[2].options[1].ans}}<br>
+  <input type="radio" name="q3" [(ngModel)]="myAns[2]" value=2> 
+  {{questions[2].options[2].ans}}<br>
+</div>
+
+
+<p *ngIf="!(myAns[0] && myAns[1] && myAns[2])"> Please answer ALL questions </p>
+
+
+<button type="reset"> Cancel </button>
+<button type="submit" [disabled]="!(myAns[0] && myAns[1] && myAns[2])"> Submit </button>
+
+
+
+
+</form>
